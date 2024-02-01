@@ -5,11 +5,6 @@ import {
   } from "react-router-dom";
 
 export default function Form1(props){
-    const disable = {
-        backgroundColor: 'gray',
-        cursor: 'not-allowed'
-
-    };
     const [mail, setmail] = useState("");
     const [passw, setpassw] = useState("");
     const navigate = useNavigate();
@@ -47,11 +42,11 @@ export default function Form1(props){
     return(
         <div>
            <div className='togglebar'>
-        <Link to={"/form1"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 1</h2></Link>
+        <Link to={"/form1"} className="links"><h2 className="formbtn">Form 1</h2></Link>
 
-        {props.one? <Link to={"/form2"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 2</h2></Link> : <h2 className="formbtn">Form 2</h2>}
+        {props.one? <Link to={"/form2"} className="links"><h2 className="formbtn">Form 2</h2></Link> : <h2 className="formbtn">Form 2</h2>}
         
-        {props.two? <Link to={"/form3"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 3</h2></Link> : <h2 className="formbtn">Form 3</h2>}
+        {props.two? <Link to={"/form3"} className="links"><h2 className="formbtn">Form 3</h2></Link> : <h2 className="formbtn">Form 3</h2>}
         
       </div>
         <div className="container">
@@ -66,9 +61,9 @@ export default function Form1(props){
             </form>
             </div>
             <div className="btn">
-                <button style={disable}>Back</button>
-                <button>Save</button>
-                <button onClick={validate}>Save & Next</button>
+                <button className="disable">Back</button>
+                <button className="enable">Save</button>
+                <button className="enable" onClick={validate}>Save & Next</button>
                 {/* {cnd? <Link to={"/form2"} style={{ textDecoration: 'none' }}><button>Save & Next</button></Link> : <button onClick={validate}>Save & Next</button>} */}
                 
             </div>

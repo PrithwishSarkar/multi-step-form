@@ -5,15 +5,7 @@ import {
   } from "react-router-dom";
 
 export default function Form3(props){
-    const disable = {
-        backgroundColor: 'gray',
-        cursor: 'not-allowed'
-
-    };
-    const cc={
-        width: "325px",
-        marginLeft: "5px"
-    }
+    
     const navigate = useNavigate();
     const [ccode, setccode] = useState("+91");
     const [num, setnum] = useState("");
@@ -52,32 +44,32 @@ export default function Form3(props){
     return(
         <div>
            <div className='togglebar'>
-        <Link to={"/form1"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 1</h2></Link>
-        <Link to={"/form2"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 2</h2></Link>
-        <Link to={"/form3"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 3</h2></Link>
+        <Link to={"/form1"} className="links"><h2 className="formbtn">Form 1</h2></Link>
+        <Link to={"/form2"} className="links"><h2 className="formbtn">Form 2</h2></Link>
+        <Link to={"/form3"} className="links"><h2 className="formbtn">Form 3</h2></Link>
         
       </div>
         <div className="container">
             <div className="entry">
                 <form action="" className="formstyle">
                     <h2>Country code:</h2>
-                    <select name="countrycode" id="" style={cc} value={ccode} onChange={handleccode}>
+                    <select name="countrycode" id="" value={ccode} onChange={handleccode} className="selector">
                         <option value="+91">India (+91)</option>
                         <option value="+1">America (+1)</option>
                     </select>
 
                     <h2>Phone Number:</h2>
-                    <input type="text" name="phonenumber" id="" value={num} onChange={handlenum}/>
+                    <input type="text" name="phonenumber" id="fon" value={num} onChange={handlenum}/>
                     {/* <h2></h2> */}
                     {/* <h5><input type="checkbox" name="" id=""/> Accept Terms and Conditions</h5> */}
                 </form>
                 <h3><input type="checkbox" name="" id="" onClick={handletnc}/> Accept Terms and Conditions</h3>
                 </div>
                 <div className="btn">
-                <Link to={"/form2"} style={{ textDecoration: 'none' }}>
-                <button>Back</button></Link>
-                <button onClick={validate}>Save</button>
-                <button style={disable}>Save & Next</button>
+                <Link to={"/form2"} className="links">
+                <button className="enable">Back</button></Link>
+                <button className="enable" onClick={validate}>Save</button>
+                <button className="disable">Save & Next</button>
                 
             </div>
         </div>

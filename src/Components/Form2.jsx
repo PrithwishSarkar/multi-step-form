@@ -47,9 +47,9 @@ export default function Form2(props) {
         <div>
             
            <div className='togglebar'>
-        <Link to={"/form1"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 1</h2></Link>
-        <Link to={"/form2"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 2</h2></Link>
-        {props.two? <Link to={"/form3"} style={{ textDecoration: 'none' }}><h2 className="formbtn">Form 3</h2></Link> : <h2 className="formbtn">Form 3</h2>}
+        <Link to={"/form1"} className="links"><h2 className="formbtn">Form 1</h2></Link>
+        <Link to={"/form2"} className="links"><h2 className="formbtn">Form 2</h2></Link>
+        {props.two? <Link to={"/form3"} className="links"><h2 className="formbtn">Form 3</h2></Link> : <h2 className="formbtn">Form 3</h2>}
         
       </div>
         <div className="container">
@@ -67,9 +67,9 @@ export default function Form2(props) {
                 </form>
             </div>
             <div className="btn">
-            <Link to={"/form1"} style={{ textDecoration: 'none' }}><button>Back</button></Link>
-                <button>Save</button>
-                <button onClick={validate}>Save & Next</button>
+            <Link to={"/form1"} className="links"><button className="enable">Back</button></Link>
+                <button className="enable">Save</button>
+                <button className="enable" onClick={validate}>Save & Next</button>
                 {/* {cnd? <Link to={"/form3"} style={{ textDecoration: 'none' }}><button>Save & Next</button></Link> : <button onClick={validate}>Save & Next</button>} */}
             </div>
         </div>
